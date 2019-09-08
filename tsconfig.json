@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "lib": ["dom", "es2015"],
+        "noImplicitThis": true,
+        "strict": true,
+        "outDir": "out",
+        "typeRoots": ["node_modules/@types"],
+        "declaration": true,
+        "declarationDir": "typings",
+        "sourceMap": true
+    }
+}

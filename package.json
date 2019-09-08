@@ -1,0 +1,85 @@
+{
+    "name": "yarab",
+    "version": "0.0.0-beta",
+    "description": "First try to use IOTA blockchain isa",
+    "scripts": {
+        "init": "npm i && lerna bootstrap",
+        "test": "lerna exec -- npm test",
+        "test-ci": "lerna bootstrap && lerna exec -- npm run test-ci && npm run lint",
+        "test-android": "lerna bootstrap && lerna run test-android --stream",
+        "test-android-ci": "lerna bootstrap && lerna run test-android-ci --stream",
+        "test:staged": "node scripts/test-staged.js",
+        "lint": "tslint --project .",
+        "docs": "lerna run docs"
+    },
+    "contributors": [
+        "Dominik Schiener <dom@iota.org> (https://iota.org)",
+        "Edward Greve <edward@iota.org> (https://github.com/anyong)",
+        "Chris Dukakis <chris.dukakis@iota.org> (https://github.com/chrisdukakis)"
+    ],
+    "ava": {
+        "files": [
+            "packages/**/out/**/test/*.test.js",
+            "packages/**/out/**/test/integration/*.test.js"
+        ],
+        "failFast": true,
+        "failWithoutAssertions": false,
+        "compileEnhancements": false,
+        "verbose": true
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged && node ./scripts/test-staged.js",
+            "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+        }
+    },
+    "lint-staged": {
+        "*.{ts}": [
+            "tslint --fix",
+            "git add"
+        ],
+        "*.{js,ts,json}": [
+            "prettier --write",
+            "git add"
+        ]
+    },
+    "keywords": [
+        "iota",
+        "tangle",
+        "library",
+        "javascript",
+        "nodejs",
+        "API"
+    ],
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/iotaledger/iota.lib.js/issues"
+    },
+    "repository": "https://github.com/iotaledger/iota.lib.js.git",
+    "dependencies": {
+        "@iota/converter": "^1.0.0-beta.21",
+        "@iota/core": "^1.0.0-beta.21",
+        "@types/bluebird": "^3.5.25",
+        "@types/node": "^12.0.0",
+        "prompts": "^2.2.1"
+    },
+    "devDependencies": {
+        "@commitlint/cli": "^8.1.0",
+        "@commitlint/config-conventional": "^8.0.0",
+        "@commitlint/travis-cli": "^7.2.1",
+        "ava": "^0.25.0",
+        "dmd-clear": "^0.1.2",
+        "husky": "^3.0.0",
+        "jsdoc-babel": "^0.5.0",
+        "lerna": "^3.14.1",
+        "lint-staged": "^9.0.0",
+        "nyc": "^14.0.0",
+        "prettier": "^1.10.2",
+        "staged-git-files": "^1.1.1",
+        "tslint": "^5.9.1",
+        "tslint-config-prettier": "^1.6.0",
+        "typescript": "^3.1.3"
+    },
+    "main": "index.js",
+    "author": "yehia67 <yehiatarek67@gmail.com>"
+}

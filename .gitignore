@@ -1,0 +1,14 @@
+node_modules
+coverage
+/packages/*/node_modules
+/packages/*/out
+/packages/*/typings
+.DS_Store
+*/**/.DS_Store
+.idea
+*.iml
+.git
+.vscode
+.nyc_output
+*.log
+*.cache
