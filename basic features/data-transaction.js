@@ -19,7 +19,7 @@ const transfers = [{
 
 iota.prepareTransfers(seed, transfers)
     .then(trytes => {
-        return iota.sendTrytes(trytes, 3 /*depth*/ , 14 /*minimum weight magnitude*/ )
+        return iota.sendTrytes(trytes, 3 /*depth*/ , 9 /*minimum weight magnitude*/ )
     })
     .then(bundle => {
         console.log(`Bundle: ${JSON.stringify(bundle, null, 1)}`)

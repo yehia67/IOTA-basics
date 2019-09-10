@@ -8,7 +8,7 @@ const iota = Iota.composeAPI({
 
 // Replace this seed with the one that owns the address you used to receive free Devnet tokens 
 const seed =
-    'IOWPPONJTYHHVRFRGFRWRVQU9VDMQYLEVVEABJPW9PT9F9SYMGIOFDXPYSLGESFTMBSJECQEPLHGWWYRZCMDDUZNCA';
+    'IOWPPONJTYHHVRFRGFRWRVQU9VDMQYLEVVEABJPW9PT9F9SYMGIOFDXPYSLGESFTMBSJECQEPLHGWWYRZ';
 
 // Create a wrapping function so you can use async/await
 const main = async() => {
@@ -16,7 +16,7 @@ const main = async() => {
     // Create a different address from your seed to send the tokens to
     // Be sure that you have never withdrawn from this address before 
     const receivingAddress = await iota.getNewAddress(seed, {
-        index: 2,
+        index: 3,
         total: 1
     });
 
