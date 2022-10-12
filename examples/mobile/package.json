@@ -12,7 +12,7 @@
         "@iota/pearl-diver-react-native": "^1.0.0-beta.84aa7305",
         "@iota/signing": "^1.0.0-beta.84aa7305",
         "react": "16.6.0-alpha.8af6728",
-        "react-native": "0.57.3"
+        "react-native": "0.70.2"
     },
     "devDependencies": {
         "babel-jest": "23.6.0",
